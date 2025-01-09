@@ -27,6 +27,7 @@ const useFetchData = (url, refreshRate) => {
       try {
         setLoading(true);
         const response = await axios.get(url);
+        console.log(response);
         setData(response.data);
         setError(null);
       }catch (err) {
