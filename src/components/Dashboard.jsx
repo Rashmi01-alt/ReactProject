@@ -35,7 +35,7 @@ const Dashboard = () => {
 };
 
 const DataFetcher = ({ category, endpoint, refreshRate }) => {
-  const { data, loading, error } = useFetchData(endpoint, refreshRate);
+  const { data, loading, error } = useFetchData(category, refreshRate);
 
   return (
     <DataCard
