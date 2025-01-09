@@ -1,5 +1,6 @@
 // 
 import { useState, useEffect } from "react";
+import axios from "axios"
 
 const useFetchData = (url, refreshRate) => {
   console.log(url);
@@ -25,7 +26,7 @@ const useFetchData = (url, refreshRate) => {
       // } catch (err) {
       try {
         setLoading(true);
-        const response = await axios.get(endpoint);
+        const response = await axios.get(url);
         setData(response.data);
         setError(null);
       }catch (err) {
