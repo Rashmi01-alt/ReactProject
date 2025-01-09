@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 
 const useFetchData = (url, refreshRate) => {
+  console.log(url);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
