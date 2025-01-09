@@ -11,16 +11,24 @@ const useFetchData = (url, refreshRate) => {
     let interval;
 
     const fetchData = async () => {
+      
+      // try {
+      //   setLoading(true);
+      //   const response = await fetch(url);
+      //   if (!response.ok) {
+      //     throw new Error(`HTTP error! Status: ${response.status}`);
+      //   }
+      //   const responseData = await response.json();
+      //   setData(responseData);
+      //   setError(null);
+      
+      // } catch (err) {
       try {
         setLoading(true);
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const responseData = await response.json();
-        setData(responseData);
+        const response = await axios.get(endpoint);
+        setData(response.data);
         setError(null);
-      } catch (err) {
+      }catch (err) {
         setError(err.message);
       } finally {
         setLoading(false);
