@@ -26,7 +26,7 @@ const useFetchData = (url, refreshRate) => {
       // } catch (err) {
       try {
         setLoading(true);
-        const response = await axios.get("https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=d1845658f92b31c64bd94f06f7188c9c&units=metric");
+        const response = await axios.get(url);
         console.log(response);
         setData(response.data);
         setError(null);
